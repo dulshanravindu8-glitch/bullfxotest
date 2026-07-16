@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form Demo</title>
+</head>
+<body>
+
+<h2>Educational Form</h2>
+
+<input type="text" id="field1" placeholder="Field 1"><br><br>
+<input type="text" id="field2" placeholder="Field 2"><br><br>
+<input type="text" id="field3" placeholder="Field 3"><br><br>
+<input type="text" id="field4" placeholder="Field 4"><br><br>
+<input type="text" id="field5" placeholder="Field 5"><br><br>
+<input type="text" id="field6" placeholder="Field 6"><br><br>
+
+<button onclick="saveData()">Save to TXT</button>
+
+<script>
+function saveData() {
+    const data =
+        "Field 1: " + document.getElementById("field1").value + "\n" +
+        "Field 2: " + document.getElementById("field2").value + "\n" +
+        "Field 3: " + document.getElementById("field3").value + "\n" +
+        "Field 4: " + document.getElementById("field4").value + "\n" +
+        "Field 5: " + document.getElementById("field5").value + "\n" +
+        "Field 6: " + document.getElementById("field6").value;
+
+    const blob = new Blob([data], { type: "text/plain" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "form_data.txt";
+    a.click();
+}
+</script>
+
+</body>
+</html>
