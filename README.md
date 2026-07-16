@@ -1,0 +1,2 @@
+# bullfxotest
+Smart treding 
